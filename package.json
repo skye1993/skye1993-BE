@@ -6,10 +6,13 @@
   "scripts": {
     "setup-dbs": "psql -f ./db/setup-dbs.sql",
     "seed-dev": "node ./db/seeds/run-seed.js",
-    "test": "jest --runInBand",
+    "test": "jest",
     "prepare": "husky install",
     "start": "node listen.js",
-    "test-seed": "jest seed.test.js"
+    "test-seed": "jest seed.test.js",
+    "test-utils": "jest utils-seed-test.js",
+    "dev": "nodemon listen.js",
+    "test-app": "jest app.test.js"
   },
   "repository": {
     "type": "git",
@@ -25,15 +28,20 @@
   "devDependencies": {
     "husky": "^8.0.2",
     "jest": "^27.5.1",
-    "jest-extended": "^2.0.0"
+    "jest-extended": "^2.0.0",
+    "jest-sorted": "^1.0.15",
+    "supertest": "^7.1.4"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "pg": "^8.13.3"
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "node-pg-format": "^1.3.5",
+    "pg": "^8.16.3"
   },
-   "jest": {
+  "jest": {
     "setupFilesAfterEnv": [
-      "jest-extended/all"
+      "jest-extended/all","jest-sorted"
     ]
+    
   }
 }
