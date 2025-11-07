@@ -18,4 +18,4 @@ console.log("Hello from error Handling Middleware", err)
 res.status(500).send({msg: "Internal Server Error"})
 })
 
-module.exports = {handlePsqlErrors, handleCustomErrors, handlrServerErrors}
+module.exports = {handlePsqlErrors, handleCustomErrors, handlrServerErrors }
