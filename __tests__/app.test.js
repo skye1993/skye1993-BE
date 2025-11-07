@@ -145,7 +145,7 @@ describe("GET: /api/users", () => {
   });
 });
 describe("GET: /api/articles/:article_id", () => {
-  test.only("200: Responds with the articles object with the requested article_id", () => {
+  test("200: Responds with the articles object with the requested article_id", () => {
     return request(app)
       .get("/api/articles/3")
       .expect(200)
