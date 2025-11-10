@@ -150,7 +150,6 @@ describe("GET: /api/articles/:article_id", () => {
       .get("/api/articles/3")
       .expect(200)
       .then(({ body }) => {
-          console.log(body);
         const { article } = body;
 
         expect(article.article_id).toBe(3);
